@@ -1,11 +1,13 @@
 h1 {
   color: white;
   font-family: 'Roboto', sans-serif;
+  font-size: 10vw;
 }
 
 h3 {
   color: white;
   font-family: 'Open Sans', sans-serif;
+  font-size: 5vw;
 }
 
 .vertical-center {
