@@ -12,9 +12,11 @@ def getCity(city_name):
     return city_location_key
 
 def getForecast(city_location_key):
-    forecast_url = 'http://dataservice.accuweather.com/forecasts/v1/daily/10day/' + city_location_key + '?apikey=1bzYRqzTdOmJyENfmlZY7cm24tGhf5fq'
+    forecast_url = 'http://dataservice.accuweather.com/forecasts/v1/daily/5day/' + city_location_key + '?apikey=1bzYRqzTdOmJyENfmlZY7cm24tGhf5fq&metric=true'
     with urllib.request.urlopen(forecast_url) as forecast_city:
         data = json.loads(forecast_city.read().decode())
+        with open('data.json', 'w') as f:
+            json.dump(data, f)
         print(data)
 
 app = Flask(__name__)
