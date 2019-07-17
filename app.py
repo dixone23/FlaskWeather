@@ -33,3 +33,6 @@ def main():
     nextday2 = data['daily']['data'][2]['temperatureMax']
     nextday3 = data['daily']['data'][3]['temperatureMax']
     return render_template("layout.html", today=today, nextday1=nextday1, nextday2=nextday2, nextday3=nextday3, date1=date1, date2=date2, date3=date3, date4=date4)
+
+if __name__ == '__main__':
+    app.run()
