@@ -1,4 +1,18 @@
-body {
+h1 {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+h3 {
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+  display: flex;
+  align-items: center;
   background-color: #333333;
   background-image: url('imgs/weather.png');
   background-repeat: repeat;
