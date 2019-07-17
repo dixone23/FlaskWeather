@@ -6,7 +6,7 @@ darkskyAPI = 'dacdc5620ba241a45fb5c1f5d838fdf9'
 
 app = Flask(__name__)
 
-@app.route("/weather")
+@app.route("/")
 def main():
     weatherUrl = requests.get('https://api.darksky.net/forecast/' + darkskyAPI + '/51.21006,16.1619?lang=pl&units=auto&exclude=currently&exclude=minutely&exclude=hourly&exclude=alerts&exclude=flags')
     weatherRequest = weatherUrl.text
