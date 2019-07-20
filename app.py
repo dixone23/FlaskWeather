@@ -5,6 +5,7 @@ import json, time, requests, datetime
 darkskyAPI = 'dacdc5620ba241a45fb5c1f5d838fdf9'
 
 app = Flask(__name__)
+#export FLASK_ENV=development
 
 @app.route("/")
 def main():

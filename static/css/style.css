@@ -1,11 +1,13 @@
 h1 {
   color: white;
   font-family: 'Roboto', sans-serif;
+  text-align: center;
 }
 
 h3 {
   color: white;
   font-family: 'Open Sans', sans-serif;
+  text-align: center;
 }
 
 .vertical-center {
@@ -16,5 +18,5 @@ h3 {
   background-color: #333333;
   background-image: url('imgs/weather.png');
   background-repeat: repeat;
-  background-size: 5%;
+  background-size: 6%;
 }
