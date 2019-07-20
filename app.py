@@ -5,7 +5,6 @@ import json, time, requests, datetime
 darkskyAPI = 'dacdc5620ba241a45fb5c1f5d838fdf9'
 
 app = Flask(__name__)
-#export FLASK_ENV=development
 
 @app.route("/")
 def main():
@@ -13,26 +12,31 @@ def main():
     weatherRequest = weatherUrl.text
     data = json.loads(weatherRequest)
 
+    #with open('apidata.json', 'w') as outfile:
+    #    json.dump(data, outfile)
+    
+
     dt1 = data['daily']['data'][0]['time']
-    date1 = time.ctime(dt1)
-    date1 = time.strftime("%D")
+    date1 = datetime.datetime.fromtimestamp(int(dt1))
+    date1 = date1.strftime('%d.%m')
 
     dt2 = data['daily']['data'][1]['time']
-    date2 = time.ctime(dt2)
-    date2 = time.strftime("%D")
+    date2 = datetime.datetime.fromtimestamp(int(dt2))
+    date2 = date2.strftime('%d.%m')
 
     dt3 = data['daily']['data'][2]['time']
-    date3 = time.ctime(dt3)
-    date3 = time.strftime("%D")
+    date3 = datetime.datetime.fromtimestamp(int(dt3))
+    date3 = date3.strftime('%d.%m')
 
     dt4 = data['daily']['data'][3]['time']
-    date4 = time.ctime(dt4)
-    date4 = time.strftime("%D")
+    date4 = datetime.datetime.fromtimestamp(int(dt4))
+    date4 = date4.strftime('%d.%m')
 
     today = data['daily']['data'][0]['temperatureMax']
     nextday1 = data['daily']['data'][1]['temperatureMax']
     nextday2 = data['daily']['data'][2]['temperatureMax']
     nextday3 = data['daily']['data'][3]['temperatureMax']
+
     return render_template("layout.html", today=today, nextday1=nextday1, nextday2=nextday2, nextday3=nextday3, date1=date1, date2=date2, date3=date3, date4=date4)
 
 if __name__ == '__main__':
